@@ -7,7 +7,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// a Class to represent the AngryChicken Sandwitch
     /// </summary>
-    public class AngryChicken
+    public class AngryChicken : Entree
     {
         /// <summary>
         /// private value for bread variable
@@ -28,14 +28,14 @@ namespace CowboyCafe.Data
         /// <summary>
         /// the price of the AngryChicken
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 5.99; }
         }
         /// <summary>
         /// the number of calories inside the Angrychicken
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 190; }
         }
@@ -43,7 +43,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// a list of special instructions for this AngryChicken
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
