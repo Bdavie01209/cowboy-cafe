@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Blake Davies
+
+* Class name: DakotaDoubleBurger.cs
+
+* Purpose: to create the DakotaDoubleBurger class
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

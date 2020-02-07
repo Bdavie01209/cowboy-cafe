@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Blake Davies
+
+* Class name: RustlersRibs.cs
+
+* Purpose: to create the RustlersRibs entree class
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

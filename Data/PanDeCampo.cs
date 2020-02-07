@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Blake Davies
+
+* Class name: PanDeCampo.cs
+
+* Purpose: to create the PanDeCampo entree class
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

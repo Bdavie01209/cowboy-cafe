@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+
+* Author:Professor
+
+* Edited by: Blake Davies
+
+* Class name: CowpokeChili.cs
+
+* Purpose: To create the cowpokechili entree class
+
+*/
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data

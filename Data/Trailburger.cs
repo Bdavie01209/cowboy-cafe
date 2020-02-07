@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Blake Davies
+
+* Class name: TrailBurger.cs
+
+* Purpose: to create the TrailBurger entree class
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

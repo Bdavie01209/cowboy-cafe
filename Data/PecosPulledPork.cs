@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Blake Davies
+
+* Class name: PecosPulledPork.cs
+
+* Purpose: to create the PecosPulledPork entree class
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

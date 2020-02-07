@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Blake Davies
+
+* Class name: AngryChicken.cs
+
+* Purpose: to create the AngryChicken class
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

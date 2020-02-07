@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Blake Davies
+
+* Class name: TexasTripleBurger.cs
+
+* Purpose: to create the TexasTripleBurger entree class
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

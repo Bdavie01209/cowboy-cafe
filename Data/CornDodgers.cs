@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Blake Davies
+
+* Class name: CornDodgers.cs
+
+* Purpose: to create the CornDodgers class
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

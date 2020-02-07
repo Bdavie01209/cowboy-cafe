@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Blake Davies
+
+* Class name: Entree.cs
+
+* Purpose: to create the Entree interface
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

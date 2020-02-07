@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Blake Davies
+
+* Class name: ChiliCheeseFries.cs
+
+* Purpose: to create the ChiliCheeseFries class
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

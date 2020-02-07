@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Blake Davies
+
+* Class name: Side.cs
+
+* Purpose: to create the sides interface
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Blake Davies
+
+* Class name: BakedBeans.cs
+
+* Purpose: to create the BakedBeans class
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
