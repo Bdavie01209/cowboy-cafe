@@ -2,10 +2,9 @@
 
 * Author: Blake Davies
 
-* Class name: JerkedSoda.cs
+* Class name: CowboyCoffee.cs
 
-* Purpose: to create the JerkedSoda class
-
+* Purpose: to create the CowBoycoffee class
 */
 using System;
 using System.Collections.Generic;
@@ -14,12 +13,12 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// class for the jerked soda drink
+    /// the CowboyCoffee drink class
     /// </summary>
-    public class JerkedSoda : Drink
+    public class CowboyCoffee : Drink
     {
         /// <summary>
-        /// the price of the jerked soda drink base on size
+        /// the price of the cowboy coffee drink based on the size
         /// </summary>
         public override double Price
         {
@@ -30,16 +29,16 @@ namespace CowboyCafe.Data
                     default:
                         throw new NotImplementedException("Unknown Size");
                     case Size.Small:
-                        return 1.59;
+                        return .60;
                     case Size.Medium:
-                        return 2.10;
+                        return 1.10;
                     case Size.Large:
-                        return 2.59;
+                        return 1.60;
                 }
             }
         }
         /// <summary>
-        /// the amount of calories inisde of the jerked soda drink based on size
+        /// the amount of calories inisde the cowboy coffee drink
         /// </summary>
         public override uint Calories
         {
@@ -50,16 +49,16 @@ namespace CowboyCafe.Data
                     default:
                         throw new NotImplementedException("Unknown Size");
                     case Size.Small:
-                        return 110;
+                        return 3;
                     case Size.Medium:
-                        return 146;
+                        return 5;
                     case Size.Large:
-                        return 198;
+                        return 7;
                 }
             }
         }
         /// <summary>
-        /// a list of instructions based on the current jerkedsoda drink 
+        /// special instructions for the cowboy coffee drinki
         /// </summary>
         public override List<string> SpecialInstructions
         {
@@ -67,16 +66,24 @@ namespace CowboyCafe.Data
             {
                 List<string> instructions = new List<string>();
 
-                if (!Ice) instructions.Add("Hold Ice");
+                if (Ice) instructions.Add("Add Ice");
+                if (RoomForCream) instructions.Add("Room for Cream");
 
                 return instructions;
             }
 
         }
-
         /// <summary>
-        /// the flavor of the drink
+        /// the weather the cowbo coffee drink has ice
         /// </summary>
-        public SodaFlavor Flavor { get; set; }
+        public override bool Ice { get; set; } = false;
+        /// <summary>
+        /// weather there should be room for cream in the coffee
+        /// </summary>
+        public bool RoomForCream { get; set; } = false;
+        /// <summary>
+        /// weather the coffee is decaf or not
+        /// </summary>
+        public bool Decaf { get; set; } = false;
     }
 }

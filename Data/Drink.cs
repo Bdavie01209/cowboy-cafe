@@ -32,17 +32,17 @@ namespace CowboyCafe.Data
         /// <summary>
         /// the ingredients inside the drink
         /// </summary>
-        public abstract List<string> Ingredients { get; }
+        public abstract List<string> SpecialInstructions { get; }
 
         /// <summary>
         /// the size of the drink
         /// </summary>
-        public Size Size { get; set; } = Size.Small;
+        public virtual Size Size { get; set; } = Size.Small;
 
         /// <summary>
         /// weather the drink contains ice
         /// </summary>
-        public bool Ice { get; set; } = true;
+        public virtual bool Ice { get; set; } = true;
 
 
     }
