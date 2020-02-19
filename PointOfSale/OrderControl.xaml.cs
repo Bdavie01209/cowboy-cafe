@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+
+* Author: Blake Davies
+
+* File name: OrderControl.Xaml.cs
+
+* Purpose: to handle the events for the point of sale
+
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
