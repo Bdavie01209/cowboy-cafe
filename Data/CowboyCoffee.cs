@@ -85,5 +85,18 @@ namespace CowboyCafe.Data
         /// weather the coffee is decaf or not
         /// </summary>
         public bool Decaf { get; set; } = false;
+
+
+        /// <summary>
+        /// converts object to string
+        /// </summary>
+        /// <returns>returns formatted name of object</returns>
+        public override string ToString()
+        {
+            string returnValue = Size.ToString();
+            if (Decaf) returnValue += " Decaf";
+            returnValue += " Cowboy Coffee";
+            return returnValue;
+        }
     }
 }

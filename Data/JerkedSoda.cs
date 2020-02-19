@@ -78,5 +78,40 @@ namespace CowboyCafe.Data
         /// the flavor of the drink
         /// </summary>
         public SodaFlavor Flavor { get; set; }
+
+
+        /// <summary>
+        /// converts object to string
+        /// </summary>
+        /// <returns>returns formatted name of object</returns>
+        public override string ToString()
+        {
+            string returnValue = Size.ToString();
+
+            switch (Flavor)
+            {
+                case SodaFlavor.BirchBeer:
+                    returnValue += " Birch Beer";
+                    break;
+                case SodaFlavor.CreamSoda:
+                    returnValue += " Cream Soda";
+                    break;
+                case SodaFlavor.OrangeSoda:
+                    returnValue += " Orange Soda";
+                    break;
+                case SodaFlavor.RootBeer:
+                    returnValue += " Root Beer";
+                    break;
+                case SodaFlavor.Sarsparilla:
+                    returnValue += " Sarsparilla";
+                    break;
+                default:
+                    throw new NotImplementedException("Unknown Flavor");
+            }
+
+            returnValue += " Jerked Soda";
+
+            return returnValue;
+        }
     }
 }

@@ -98,6 +98,16 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+
+        /// <summary>
+        /// Returns the string of the entree
+        /// </summary>
+        /// <returns>the entrees name formated correctly</returns>
+        public override string ToString()
+        {
+            return "Cowpoke Chili";
+        }
     }
 }
 

@@ -46,5 +46,14 @@ namespace CowboyCafe.Data
         /// weather the drink has lemon in it
         /// </summary>
         public bool Lemon { get; set; } = false;
+
+        /// <summary>
+        /// converts object to string
+        /// </summary>
+        /// <returns>returns formatted name of object</returns>
+        public override string ToString()
+        {
+            return Size.ToString() + " Water";
+        }
     }
 }

@@ -100,5 +100,25 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Lemon { get; set; } = false;
 
+        /// <summary>
+        /// converts object to string
+        /// </summary>
+        /// <returns>returns formatted name of object</returns>
+        public override string ToString()
+        {
+            string returnValue = Size.ToString();
+
+            if (Sweet)
+            {
+                returnValue += " Texas Sweet Tea";
+            }
+            else
+            {
+                returnValue += " Texas Plain Tea";
+            }
+
+            return returnValue;
+        }
+
     }
 }
