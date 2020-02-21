@@ -12,12 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{CA8BB578-1D08-4D0E-BFD8-142C80199280}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\Documents\Cowboy Cafe Uml Diagram.pdf = ..\..\..\Documents\Cowboy Cafe Uml Diagram.pdf
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{6F17487B-64A4-4B7D-B861-69F2B31611F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{6DB258E8-89F2-4E22-A835-3B94F581EBED}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Uml Diagram For Data.pdf = Documentation\Uml Diagram For Data.pdf
+		Documentation\Uml diagram for XAML.pdf = Documentation\Uml diagram for XAML.pdf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
