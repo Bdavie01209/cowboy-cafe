@@ -77,6 +77,16 @@ namespace PointOfSale
         }
 
         /// <summary>
+        /// handler for trail burger button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddTrailBurgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            OrderListBox.Items.Add(new TrailBurger());
+        }
+
+        /// <summary>
         /// event hanlder for the rustler's ribs button
         /// </summary>
         /// <param name="sender"></param>
@@ -180,5 +190,7 @@ namespace PointOfSale
         {
             OrderListBox.Items.Add(new Water());
         }
+
+
     }
 }
