@@ -43,7 +43,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddAngryChickenButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListBox.Items.Add(new AngryChicken());
+            if (DataContext is Order order)
+            {
+                order.Add(new AngryChicken());
+            }
         }
 
         /// <summary>
@@ -53,7 +56,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddCowPokeChiliButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListBox.Items.Add(new CowpokeChili());
+            if (DataContext is Order order)
+            {
+                order.Add(new CowpokeChili());
+
+            }
         }
 
         /// <summary>
@@ -63,7 +70,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
         {
-            OrderListBox.Items.Add(new DakotaDoubleBurger());
+            if (DataContext is Order order)
+            {
+                order.Add(new DakotaDoubleBurger());
+            }
         }
 
         /// <summary>
@@ -73,7 +83,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddPecosPulledPorkButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListBox.Items.Add(new PecosPulledPork());
+            if (DataContext is Order order)
+            {
+                order.Add(new PecosPulledPork());
+            }
         }
 
         /// <summary>
@@ -83,7 +96,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddTrailBurgerButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListBox.Items.Add(new TrailBurger());
+            if (DataContext is Order order)
+            {
+                order.Add(new TrailBurger());
+            }
         }
 
         /// <summary>
@@ -93,7 +109,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddRustlersRibsButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListBox.Items.Add(new RustlersRibs());
+            if (DataContext is Order order)
+            {
+                order.Add(new RustlersRibs());
+            }
         }
 
         /// <summary>
@@ -103,7 +122,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddTexasTripleBurgerButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListBox.Items.Add(new TexasTripleBurger());
+            if (DataContext is Order order)
+            {
+                order.Add(new TexasTripleBurger());
+            }
         }
 
 
@@ -116,7 +138,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddBakedBeansButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListBox.Items.Add(new BakedBeans());
+            if (DataContext is Order order)
+            {
+                order.Add(new BakedBeans());
+            }
         }
 
         /// <summary>
@@ -126,7 +151,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddChiliCheeseFriesButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListBox.Items.Add(new ChiliCheeseFries());
+            if (DataContext is Order order)
+            {
+                order.Add(new ChiliCheeseFries());
+            }
         }
 
         /// <summary>
@@ -136,7 +164,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddCornDodgersButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListBox.Items.Add(new CornDodgers());
+            if (DataContext is Order order)
+            {
+                order.Add(new CornDodgers());
+            }
         }
 
         /// <summary>
@@ -146,7 +177,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddPanDeCampoButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListBox.Items.Add(new PanDeCampo());
+            if (DataContext is Order order)
+            {
+                order.Add(new PanDeCampo());
+            }
         }
 
         //Drinks Event handlers
@@ -158,7 +192,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddCowboyCoffeeButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListBox.Items.Add(new CowboyCoffee());
+            if (DataContext is Order order)
+            {
+                order.Add(new CowboyCoffee());
+            }
         }
 
         /// <summary>
@@ -168,7 +205,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddJerkedSodaButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListBox.Items.Add(new JerkedSoda());
+            if (DataContext is Order order)
+            {
+                order.Add(new JerkedSoda());
+            }
         }
 
         /// <summary>
@@ -178,7 +218,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddTexasTeaButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListBox.Items.Add(new TexasTea());
+            if (DataContext is Order order)
+            {
+                order.Add(new TexasTea());
+            }
         }
 
         /// <summary>
@@ -188,7 +231,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddWaterButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListBox.Items.Add(new Water());
+            if (DataContext is Order order)
+            {
+                order.Add(new Water());
+            }
         }
 
 

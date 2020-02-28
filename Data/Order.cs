@@ -18,7 +18,7 @@ namespace CowboyCafe.Data
     public class Order : INotifyPropertyChanged
     {
 
-        private static uint LastOrderNumber;
+        private static uint LastOrderNumber = 98;
 
         public event PropertyChangedEventHandler PropertyChanged;
 

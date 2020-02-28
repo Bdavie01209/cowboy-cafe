@@ -13,7 +13,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public abstract class Entree
+    public abstract class Entree : IOrderItem
     {
         /// <summary>
         /// the price of the entree as each entree has a price

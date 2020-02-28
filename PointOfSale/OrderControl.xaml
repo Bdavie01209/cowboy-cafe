@@ -18,7 +18,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
+
         </Grid.ColumnDefinitions>
 
         <StackPanel>
@@ -49,10 +49,6 @@
             <Button Name="AddWaterButton" Click="AddWaterButton_Click">Water</Button>
         </StackPanel>
 
-        <StackPanel Grid.Column="3">
-            <TextBlock TextAlignment="Center" FontSize="30">order</TextBlock>
-            <ListBox Name="OrderListBox"/>
-        </StackPanel>
 
         
     </Grid>
