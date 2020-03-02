@@ -2,9 +2,9 @@
 
 * Author: Blake Davies
 
-* File name: OrderControl.Xaml.cs
+* File name: mainWindow.Xaml.cs
 
-* Purpose: to handle the events for the point of sale
+* Purpose:  to create the point of sale
 
 */
 using System;
@@ -30,36 +30,9 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
-        /// <summary>
-        /// initilizes a main window and creates the order as well as sets the order as datacontext
-        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
-            var data = new Order();
-
-            this.DataContext = data;
-
-        }
-
-        /// <summary>
-        /// handler for when the cancle order button is pressed
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CancleOrderButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.DataContext = new Order();
-        }
-
-        /// <summary>
-        /// handler for when the new order button is pressed
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void NewOrderButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.DataContext = new Order();
         }
 
 

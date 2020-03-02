@@ -7,39 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition Height="9*"/>
-            </Grid.RowDefinitions>
-            <local:OrderControl Grid.Row="2"/>
-
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-
-                <Button>Item Selection</Button>
-                <Button Grid.Column="1" Click="CancleOrderButton_Click" Name ="CancleOrderButton">Cancel Order</Button>
-                <Button Grid.Column="2" Click="NewOrderButton_Click" Name="NewOrderButton">Complete Order</Button>
-                
-                
-                
-            </Grid>
-            
-            
-            
-        </Grid>
-        
-        
-        
-        <local:OrderSummaryControl Grid.Column="2"/>
+        <local:MenuItemSelectionControl/>
 
     </Grid>
 </Window>
