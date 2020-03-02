@@ -36,7 +36,7 @@
 
                         <TextBlock Text="{Binding}" FontWeight="Bold"/>
                         <TextBlock Grid.Column="1" Text="{Binding Path=Price, StringFormat={}{0:c}}"/>
-                        <TextBlock Text="{Binding Path=SpecialInstructions}" Grid.Row="2"/>
+                        <ListBox ItemsSource="{Binding Path=SpecialInstructions}" Grid.Row="1"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
