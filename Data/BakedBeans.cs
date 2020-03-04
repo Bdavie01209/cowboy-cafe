@@ -9,6 +9,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -18,6 +19,7 @@ namespace CowboyCafe.Data
     /// </summary>
     public class BakedBeans : Side
     {
+
         /// <summary>
         /// the price of the baked beans base on the size
         /// </summary>
@@ -59,6 +61,8 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        public override event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// converts object to string

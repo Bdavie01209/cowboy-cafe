@@ -9,6 +9,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -107,6 +108,8 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        public override event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// converts object to string

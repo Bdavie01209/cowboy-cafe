@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using CowboyCafe.Data;
+
+namespace PointOfSale.CustominzationScreens
+{
+    /// <summary>
+    /// Interaction logic for AngryChickenCustomizer.xaml
+    /// </summary>
+    public partial class AngryChickenCustomizer : UserControl
+    {
+        public AngryChickenCustomizer()
+        {
+            InitializeComponent();
+        }
+
+        private void ToggleBreadButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is AngryChicken data)
+            {
+                if (data.Bread)
+                {
+                    data.Bread = false;
+                }
+                else
+                {
+                    data.Bread = true;
+                }
+            }
+        }
+
+        private void TogglePickleButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is AngryChicken data)
+            {
+                if (data.Pickle)
+                {
+                    data.Pickle = false;
+                }
+                else
+                {
+                    data.Pickle = true;
+                }
+            }
+        }
+    }
+}

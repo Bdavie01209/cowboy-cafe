@@ -9,6 +9,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -46,6 +47,8 @@ namespace CowboyCafe.Data
         /// weather the drink has lemon in it
         /// </summary>
         public bool Lemon { get; set; } = false;
+
+        public override event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// converts object to string

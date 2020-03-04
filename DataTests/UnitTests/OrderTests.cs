@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
-
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -20,11 +20,12 @@ namespace CowboyCafe.DataTests
     {
         public class MockOrderItem : IOrderItem
         {
-
+            
             public double Price { get; set; }
 
             public List<string> SpecialInstructions { get; set; }
 
+            public event PropertyChangedEventHandler PropertyChanged;
         }
 
 

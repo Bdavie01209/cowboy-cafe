@@ -8,6 +8,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -85,6 +86,8 @@ namespace CowboyCafe.Data
         /// weather the coffee is decaf or not
         /// </summary>
         public bool Decaf { get; set; } = false;
+
+        public override event PropertyChangedEventHandler PropertyChanged;
 
 
         /// <summary>

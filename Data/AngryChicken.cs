@@ -9,6 +9,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -18,6 +19,8 @@ namespace CowboyCafe.Data
     /// </summary>
     public class AngryChicken : Entree
     {
+
+
         /// <summary>
         /// private value for bread variable
         /// </summary>
@@ -28,12 +31,36 @@ namespace CowboyCafe.Data
         public bool Bread
         {
             get { return bread; }
-            set { bread = value; }
+            set 
+            { 
+                bread = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bread"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            
+            }
         }
         /// <summary>
         /// if the Angrychicken is served with a Pickle
         /// </summary>
-        public bool Pickle { get; set; } = true;
+
+        private bool pickle = true;
+
+        public override event PropertyChangedEventHandler PropertyChanged;
+
+        public bool Pickle 
+        { 
+            get 
+            {
+                return pickle;
+            } 
+            set 
+            {
+                pickle = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            } 
+        }
+
         /// <summary>
         /// the price of the AngryChicken
         /// </summary>

@@ -9,6 +9,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -78,6 +79,8 @@ namespace CowboyCafe.Data
         /// the flavor of the drink
         /// </summary>
         public SodaFlavor Flavor { get; set; }
+
+        public override event PropertyChangedEventHandler PropertyChanged;
 
 
         /// <summary>
