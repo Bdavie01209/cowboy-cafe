@@ -74,20 +74,78 @@ namespace CowboyCafe.Data
             }
 
         }
+
+
+        private bool ice = false;
         /// <summary>
         /// the weather the cowbo coffee drink has ice
         /// </summary>
-        public override bool Ice { get; set; } = false;
+        public override bool Ice
+        {
+            get
+            {
+                return ice;
+            }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+
+        private bool roomForCream = false;
         /// <summary>
         /// weather there should be room for cream in the coffee
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        public bool RoomForCream
+        {
+            get
+            {
+                return roomForCream;
+            }
+            set
+            {
+                roomForCream = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        private bool decaf = false;
         /// <summary>
         /// weather the coffee is decaf or not
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf
+        {
+            get
+            {
+                return decaf;
+            }
+            set
+            {
+                decaf = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ToString"));
+            }
+        }
 
-        public override event PropertyChangedEventHandler PropertyChanged;
+        private Size size = Size.Small;
+
+        public override Size Size
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ToString"));
+            }
+        }
 
 
         /// <summary>
@@ -101,5 +159,12 @@ namespace CowboyCafe.Data
             returnValue += " Cowboy Coffee";
             return returnValue;
         }
+
+
+        public override event PropertyChangedEventHandler PropertyChanged;
+
+
+
+
     }
 }

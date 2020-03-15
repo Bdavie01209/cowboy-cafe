@@ -35,15 +35,45 @@ namespace CowboyCafe.Data
             get { return 528; }
         }
 
+        private bool bread = true;
+
+
+
         /// <summary>
         /// weather the pulled pork is served with bread
         /// </summary>
-        public bool Bread { get; set; } = true;
+        public bool Bread
+        {
+            get
+            {
+                return bread;
+            }
+            set
+            {
+                bread = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bread"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        private bool pickle = true;
 
         /// <summary>
         /// weather the pulled pork is served with pickles
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get
+            {
+                return pickle;
+            }
+            set
+            {
+                pickle = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
         /// a list of the speicalinstructions for the pulled pork

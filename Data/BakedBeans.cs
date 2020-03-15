@@ -62,7 +62,6 @@ namespace CowboyCafe.Data
             }
         }
 
-        public override event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// converts object to string

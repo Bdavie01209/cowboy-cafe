@@ -35,15 +35,16 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
 
+
         /// <summary>
         /// the size of the drink
         /// </summary>
-        public virtual Size Size { get; set; } = Size.Small;
+        public abstract Size Size { get; set; }
 
         /// <summary>
         /// weather the drink contains ice
         /// </summary>
-        public virtual bool Ice { get; set; } = true;
+        public abstract bool Ice { get; set; }
 
         /// <summary>
         /// requried for everything to update

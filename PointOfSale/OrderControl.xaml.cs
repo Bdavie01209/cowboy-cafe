@@ -71,5 +71,12 @@ namespace PointOfSale
         {
             ScreenHousing.Child = new MenuItemSelectioncontrols();
         }
+
+
+
+        public void updateOrderSummary()
+        {
+
+        }
     }
 }

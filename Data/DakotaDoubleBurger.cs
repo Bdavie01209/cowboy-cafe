@@ -32,43 +32,151 @@ namespace CowboyCafe.Data
             get { return 464; }
         }
 
+
+        private bool bun = true;
         /// <summary>
         /// weather the hamburger is served with a bun
         /// </summary>
-        public bool Bun { get; set; } = true;
+        public bool Bun
+        {
+            get
+            {
+                return bun;
+            }
+            set
+            {
+                bun = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        private bool ketchup = true;
 
         /// <summary>
         /// weather the sandwitch is served with catsup
         /// </summary>
-        public bool Ketchup { get; set; } = true;
+        public bool Ketchup
+        {
+            get
+            {
+                return ketchup;
+            }
+            set
+            {
+                ketchup = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
+        private bool mustard = true; 
         /// <summary>
         /// weather the sandwitch is served with mustard
         /// </summary>
-        public bool Mustard { get; set; } = true;
-
+        public bool Mustard
+        {
+            get
+            {
+                return mustard;
+            }
+            set
+            {
+                mustard = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+        private bool pickle = true;
         /// <summary>
         /// weather the sandwitch is served with pickles
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get
+            {
+                return pickle;
+            }
+            set
+            {
+                pickle = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
+        private bool cheese = true;
         /// <summary>
         /// weather the sandwitch is served with cheese
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese
+        {
+            get
+            {
+                return cheese;
+            }
+            set
+            {
+                cheese = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
+        private bool tomato = true;
         /// <summary>
         /// weather the sandwich has tomatos
         /// </summary>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato
+        {
+            get
+            {
+                return tomato;
+            }
+            set
+            {
+                tomato = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        private bool lettuce = true;
         /// <summary>
         /// weather the sandwitch has lettuce
         /// </summary>
-        public bool Lettuce { get; set; } = true;
+        public bool Lettuce
+        {
+            get
+            {
+                return lettuce;
+            }
+            set
+            {
+                lettuce = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lettuce"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+
+        private bool mayo = true;
         /// <summary>
         /// weather the sandwitch has mayo
         /// </summary>
-        public bool Mayo { get; set; } = true;
+        public bool Mayo
+        {
+            get
+            {
+                return mayo;
+            }
+            set
+            {
+                mayo = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mayo"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
 
         /// <summary>
