@@ -33,7 +33,7 @@ namespace PointOfSale
         {
             InitializeComponent();
             var data = new Order();
-
+            
             this.DataContext = data;
         }
 
@@ -70,13 +70,6 @@ namespace PointOfSale
         private void ItemSelectionButton_Click(object sender, RoutedEventArgs e)
         {
             ScreenHousing.Child = new MenuItemSelectioncontrols();
-        }
-
-
-
-        public void updateOrderSummary()
-        {
-
         }
     }
 }

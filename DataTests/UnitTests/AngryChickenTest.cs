@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -59,5 +60,58 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold pickle", chicken.SpecialInstructions);
             Assert.Contains("hold bread", chicken.SpecialInstructions);
         }
+
+
+        // test1: angry chicken should implement the inotifypropertychangedinterface
+        [Fact]
+        public void AngryChickenShouldImplentInotifyPropertyChanged()
+        {
+            var chicken = new AngryChicken();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chicken);
+        }
+
+
+        // test2: chaning the "Bread" property should invoke propertychanged for "Bread"
+        [Fact]
+        public void ChangingBreadPropertyShouldInvokePropertyChangedForBread()
+        {
+            var chicken = new AngryChicken();
+            Assert.PropertyChanged(chicken, "Bread", () => {
+                chicken.Bread = false;
+            });
+        }
+
+        // test3: chaning the "Bread" property should invoke propertychanged for "SpecialInstrcutions"
+        [Fact]
+        public void ChangingBreadPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var chicken = new AngryChicken();
+            Assert.PropertyChanged(chicken, "SpecialInstrcutions", () => {
+                chicken.Bread = false;
+            });
+        }
+        // test4: chaning the "Pickle" property should invoke propertychanged for "Pickle"
+        [Fact]
+        public void ChangingPicklePropertyShouldInvokePropertyChangedForPickle()
+        {
+            var chicken = new AngryChicken();
+            Assert.PropertyChanged(chicken, "Pickle", () => {
+                chicken.Pickle = false;
+            });
+        }
+
+        // test5: chaning the "Pickle" property should invoke propertychanged for "speicalInstruction"
+        [Fact]
+        public void ChangingPicklePropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var chicken = new AngryChicken();
+            Assert.PropertyChanged(chicken, "SpecialInstrcutions", () => {
+                chicken.Pickle = false;
+            });
+        }
+
+
+
+
     }
 }

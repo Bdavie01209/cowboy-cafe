@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -104,5 +105,112 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold cheese", burger.SpecialInstructions);
             Assert.Contains("hold pickle", burger.SpecialInstructions);
         }
+
+        // test1: TrailBurger should implement the inotifypropertychangedinterface
+        [Fact]
+        public void TrailBurgerShouldImplentInotifyPropertyChanged()
+        {
+            var burger = new TrailBurger();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(burger);
+        }
+
+
+        //test: Changing the "Bun" Property should invoke the property Changed for "Bun"
+        [Fact]
+        public void ChangingBunPropertyShouldInvokePropertyChangedForBun()
+        {
+            var burger = new TrailBurger();
+            Assert.PropertyChanged(burger, "Bun", () => {
+                burger.Bun = false;
+            });
+        }
+        //test: Changing the "Bun" Property should invoke the property Changed for "SpecialInstructions"
+        [Fact]
+        public void ChangingBunPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var burger = new TrailBurger();
+            Assert.PropertyChanged(burger, "SpecialInstructions", () => {
+                burger.Bun = false;
+            });
+        }
+
+        //test: Changing the "Ketchup" Property should invoke the property Changed for "Ketchup"
+        [Fact]
+        public void ChangingKetchupPropertyShouldInvokePropertyChangedForKetchup()
+        {
+            var burger = new TrailBurger();
+            Assert.PropertyChanged(burger, "Ketchup", () => {
+                burger.Ketchup = false;
+            });
+        }
+        //test: Changing the "Ketchup" Property should invoke the property Changed for "SpecialInstructions"
+        [Fact]
+        public void ChangingKetchupPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var burger = new TrailBurger();
+            Assert.PropertyChanged(burger, "SpecialInstructions", () => {
+                burger.Ketchup = false;
+            });
+        }
+
+        //test: Changing the "Mustard" Property should invoke the property Changed for "Mustard"
+        [Fact]
+        public void ChangingMustardPropertyShouldInvokePropertyChangedForMustard()
+        {
+            var burger = new TrailBurger();
+            Assert.PropertyChanged(burger, "Mustard", () => {
+                burger.Mustard = false;
+            });
+        }
+        //test: Changing the "Mustard" Property should invoke the property Changed for "SpecialInstructions"
+        [Fact]
+        public void ChangingMustardPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var burger = new TrailBurger();
+            Assert.PropertyChanged(burger, "SpecialInstructions", () => {
+                burger.Mustard = false;
+            });
+        }
+
+        //test: Changing the "Pickle" Property should invoke the property Changed for "Pickle"
+        [Fact]
+        public void ChangingPicklePropertyShouldInvokePropertyChangedForPickle()
+        {
+            var burger = new TrailBurger();
+            Assert.PropertyChanged(burger, "Pickle", () => {
+                burger.Pickle = false;
+            });
+        }
+        //test: Changing the "Pickle" Property should invoke the property Changed for "SpecialInstructions"
+        [Fact]
+        public void ChangingPicklePropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var burger = new TrailBurger();
+            Assert.PropertyChanged(burger, "SpecialInstructions", () => {
+                burger.Pickle = false;
+            });
+        }
+
+        //test: Changing the "Cheese" Property should invoke the property Changed for "Cheese"
+        [Fact]
+        public void ChangingCheesePropertyShouldInvokePropertyChangedForCheese()
+        {
+            var burger = new TrailBurger();
+            Assert.PropertyChanged(burger, "Cheese", () => {
+                burger.Cheese = false;
+            });
+        }
+        //test: Changing the "Cheese" Property should invoke the property Changed for "SpecialInstructions"
+        [Fact]
+        public void ChangingCheesePropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var burger = new TrailBurger();
+            Assert.PropertyChanged(burger, "SpecialInstructions", () => {
+                burger.Cheese = false;
+            });
+        }
+
     }
+
+
 }

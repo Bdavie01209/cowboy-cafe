@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -51,6 +52,43 @@ namespace CowboyCafe.DataTests
             cd.Size = Size.Medium;
             cd.Size = size;
             Assert.Equal<uint>(calories, cd.Calories);
+        }
+
+        // CornDodgers should implement the inotifypropertychangedinterface
+        [Fact]
+        public void CornDodgersShouldImpliemntInotifyPropertyChanged()
+        {
+            var cornDodgers = new CornDodgers();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(cornDodgers);
+        }
+
+
+
+        [Fact]
+        public void ChaningSizePropertyshouldNotifySize()
+        {
+            var cornDodgers = new CornDodgers();
+            Assert.PropertyChanged(cornDodgers, "Size", () => {
+                cornDodgers.Size = Size.Large;
+            });
+        }
+
+
+        [Fact]
+        public void ChaningSizePropertyshouldNotifyprice()
+        {
+            var cornDodgers = new CornDodgers();
+            Assert.PropertyChanged(cornDodgers, "Price", () => {
+                cornDodgers.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChaningSizePropertyshouldNotifyCalories()
+        {
+            var cornDodgers = new CornDodgers();
+            Assert.PropertyChanged(cornDodgers, "Calories", () => {
+                cornDodgers.Size = Size.Large;
+            });
         }
     }
 }

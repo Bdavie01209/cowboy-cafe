@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -117,5 +118,81 @@ namespace CowboyCafe.DataTests
             if (!ice) Assert.Collection(soda.SpecialInstructions, item => Assert.Equal("Hold Ice", item));
             if (ice) Assert.Empty(soda.SpecialInstructions);
         }
+
+
+
+
+
+
+        // test1: JerkedSoda should implement the inotifypropertychangedinterface
+        [Fact]
+        public void JerkedSodaShouldImplentInotifyPropertyChanged()
+        {
+            var soda = new JerkedSoda();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(soda);
+        }
+
+
+
+        // test2: chaning the "Ice" property should invoke propertychanged for "Ice"
+        [Fact]
+        public void ChangingIcePropertyShouldInvokePropertyChangedForIce()
+        {
+            var JerkedSoda = new JerkedSoda();
+            Assert.PropertyChanged(JerkedSoda, "Ice", () => {
+                JerkedSoda.Ice = false;
+            });
+        }
+
+        // test3: chaning the "Ice" property should invoke propertychanged for "SpecialInstrcutions"
+        [Fact]
+        public void ChangingIcePropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var JerkedSoda = new JerkedSoda();
+            Assert.PropertyChanged(JerkedSoda, "SpecialInstrcutions", () => {
+                JerkedSoda.Ice = false;
+            });
+        }
+        // test4: chaning the "Size" property should invoke propertychanged for "Size"
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForSize()
+        {
+            var JerkedSoda = new JerkedSoda();
+            Assert.PropertyChanged(JerkedSoda, "Size", () => {
+                JerkedSoda.Size = Size.Large;
+            });
+        }
+
+        // test5: chaning the "Size" property should invoke propertychanged for "Price"
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForPrice()
+        {
+            var JerkedSoda = new JerkedSoda();
+            Assert.PropertyChanged(JerkedSoda, "Price", () => {
+                JerkedSoda.Size = Size.Large;
+            });
+        }
+        // test6: chaning the "Size" property should invoke propertychanged for "Calories"
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForCalories()
+        {
+            var JerkedSoda = new JerkedSoda();
+            Assert.PropertyChanged(JerkedSoda, "Calories", () => {
+                JerkedSoda.Size = Size.Large;
+            });
+        }
+        // test7: chaning the "Flavor" property should invoke propertychanged for "Flavor"
+        [Fact]
+        public void ChangingFlavorPropertyShouldInvokePropertyChangedForFlavor()
+        {
+            var JerkedSoda = new JerkedSoda();
+            Assert.PropertyChanged(JerkedSoda, "Flavor", () => {
+                JerkedSoda.Flavor = SodaFlavor.Sarsparilla;
+            });
+        }
+
+
+
+
     }
 }

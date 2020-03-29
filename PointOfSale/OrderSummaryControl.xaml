@@ -34,9 +34,10 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Text="{Binding}" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding}" FontWeight="Bold" MouseLeftButtonUp="EditOrder"/>
                         <TextBlock Grid.Column="1" Text="{Binding Path=Price, StringFormat={}{0:c}}"/>
                         <ListBox ItemsSource="{Binding Path=SpecialInstructions}" Grid.Row="1"/>
+                        <Button Grid.Row="1" Grid.Column="1" Click="RemoveFromOrder" DataContext="{Binding}">X</Button>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

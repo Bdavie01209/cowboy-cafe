@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -126,5 +127,104 @@ namespace CowboyCafe.DataTests
             if (ice && lemon || !ice && !lemon) Assert.Single(tea.SpecialInstructions);
             if (!ice && lemon) Assert.Equal(2, tea.SpecialInstructions.Count);
         }
+
+        // test1: TexasTea should implement the inotifypropertychangedinterface
+        [Fact]
+        public void TexasTeaShouldImplentInotifyPropertyChanged()
+        {
+            var TexasTea = new TexasTea();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(TexasTea);
+        }
+
+
+        // test2: chaning the "Ice" property should invoke propertychanged for "Ice"
+        [Fact]
+        public void ChangingIcePropertyShouldInvokePropertyChangedForIce()
+        {
+            var TexasTea = new TexasTea();
+            Assert.PropertyChanged(TexasTea, "Ice", () => {
+                TexasTea.Ice = false;
+            });
+        }
+
+        // test3: chaning the "Ice" property should invoke propertychanged for "SpecialInstrcutions"
+        [Fact]
+        public void ChangingIcePropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var TexasTea = new TexasTea();
+            Assert.PropertyChanged(TexasTea, "SpecialInstrcutions", () => {
+                TexasTea.Ice = false;
+            });
+        }
+        // test4: chaning the "Size" property should invoke propertychanged for "Size"
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForSize()
+        {
+            var TexasTea = new TexasTea();
+            Assert.PropertyChanged(TexasTea, "Size", () => {
+                TexasTea.Size = Size.Large;
+            });
+        }
+
+        // test5: chaning the "Size" property should invoke propertychanged for "Price"
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForPrice()
+        {
+            var TexasTea = new TexasTea();
+            Assert.PropertyChanged(TexasTea, "Price", () => {
+                TexasTea.Size = Size.Large;
+            });
+        }
+        // test6: chaning the "Size" property should invoke propertychanged for "Calories"
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForCalories()
+        {
+            var TexasTea = new TexasTea();
+            Assert.PropertyChanged(TexasTea, "Calories", () => {
+                TexasTea.Size = Size.Large;
+            });
+        }
+
+
+
+        // test: changing the "Lemon" property should invoke propertychanged for "Lemon"
+        [Fact]
+        public void ChangingLemonPropertyShouldInvokePropertyChangedForLemon()
+        {
+            var TexasTea = new TexasTea();
+            Assert.PropertyChanged(TexasTea, "Lemon", () => {
+                TexasTea.Lemon = false;
+            });
+        }
+
+
+        //test: Changing the "Lemon" Property should invoke the property Changed for "SpecialInstrcutions"
+        [Fact]
+        public void ChangingLemonPropertyShouldInvokePropertyChangedForSpecialInstrcutions()
+        {
+            var TexasTea = new TexasTea();
+            Assert.PropertyChanged(TexasTea, "SpecialInstrcutions", () => {
+                TexasTea.Lemon = false;
+            });
+        }
+        //test: Changing the "sweet" Property should invoke the property Changed for "sweet"
+        [Fact]
+        public void ChangingsweetPropertyShouldInvokePropertyChangedFosweet()
+        {
+            var TexasTea = new TexasTea();
+            Assert.PropertyChanged(TexasTea, "SpecialInstrcutions", () => {
+                TexasTea.Sweet = false;
+            });
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }

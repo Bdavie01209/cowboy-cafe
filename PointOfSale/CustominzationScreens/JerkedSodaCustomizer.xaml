@@ -16,6 +16,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
         <Grid>
@@ -25,20 +26,18 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Button Name="SmallButton">Small</Button>
-            <Button Name="MediumButton" Grid.Row="1">Medium</Button>
-            <Button Name="LargeButton" Grid.Row="2">Large</Button>
+            <Button Name="SmallButton" Click="SmallButton_Click">Small</Button>
+            <Button Name="MediumButton" Grid.Row="1" Click="MediumButton_Click">Medium</Button>
+            <Button Name="LargeButton" Grid.Row="2" Click="LargeButton_Click">Large</Button>
         </Grid>
 
-        <Button Name="IceButton" Grid.Column="1">Ice</Button>
+        <Button Name="IceButton" Grid.Column="1" Click="IceButton_Click">Ice</Button>
 
-        <StackPanel Grid.Row="1">
-            <RadioButton x:Name="CreamSoda" Grid.Row="1" GroupName="flavours" Checked="HandleCheck">creamSoda</RadioButton>
-            <RadioButton x:Name="OrangeSoda" Grid.Row="1" GroupName="flavours" Checked="HandleCheck">OrangeSoda</RadioButton>
-            <RadioButton x:Name="Sarsparilla" Grid.Row="1" GroupName="flavours" Checked="HandleCheck">Sarsparilla</RadioButton>
-            <RadioButton x:Name="BirchBeer" Grid.Row="1" GroupName="flavours" Checked="HandleCheck">BirchBeer</RadioButton>
-            <RadioButton x:Name="RootBeer" Grid.Row="1" GroupName="flavours" Checked="HandleCheck">RootBeer</RadioButton>
-        </StackPanel>
+        <Button Name="CreamSodaButton" Grid.Row="1" Click="CreamSodaButton_Click">Cream Soda</Button>
+        <Button Name="OrangeSodaButton" Grid.Row="1" Grid.Column="1" Click="OrangeSodaButton_Click">Orange Soda</Button>
+        <Button Name="SarsparillaButton" Grid.Row="2" Grid.Column="0" Click="SarsparillaButton_Click">Sarsparilla</Button>
+        <Button Name="BirchBeerButton" Grid.Row="2" Grid.Column="1" Click="BirchBeerButton_Click">Birch Beer</Button>
+        <Button Name="RootBeerButton" Grid.Row="3" Grid.Column="0" Click="RootBeerButton_Click">Root Beer</Button>
 
 
 

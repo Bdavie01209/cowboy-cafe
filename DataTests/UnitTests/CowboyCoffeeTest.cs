@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -123,5 +124,94 @@ namespace CowboyCafe.DataTests
             if (ice && !roomForCream || !ice && roomForCream) Assert.Single(coffee.SpecialInstructions);
             if (ice && roomForCream) Assert.Equal(2, coffee.SpecialInstructions.Count);
         }
+
+        // test1: CowBoyCoffee should implement the inotifypropertychangedinterface
+        [Fact]
+        public void CowBoyCoffeeShouldImplentInotifyPropertyChanged()
+        {
+            var cowboyCoffee = new CowboyCoffee();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(cowboyCoffee);
+        }
+
+
+        // test2: chaning the "Ice" property should invoke propertychanged for "Ice"
+        [Fact]
+        public void ChangingIcePropertyShouldInvokePropertyChangedForIce()
+        {
+            var cowboyCoffee = new CowboyCoffee();
+            Assert.PropertyChanged(cowboyCoffee, "Ice", () => {
+                cowboyCoffee.Ice = true;
+            });
+        }
+
+        // test3: chaning the "Ice" property should invoke propertychanged for "SpecialInstrcutions"
+        [Fact]
+        public void ChangingIcePropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var cowboyCoffee = new CowboyCoffee();
+            Assert.PropertyChanged(cowboyCoffee, "SpecialInstrcutions", () => {
+                cowboyCoffee.Ice = true;
+            });
+        }
+        // test4: chaning the "Size" property should invoke propertychanged for "Size"
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForSize()
+        {
+            var cowboyCoffee = new CowboyCoffee();
+            Assert.PropertyChanged(cowboyCoffee, "Size", () => {
+                cowboyCoffee.Size = Size.Large;
+            });
+        }
+
+        // test5: chaning the "Size" property should invoke propertychanged for "Price"
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForPrice()
+        {
+            var cowboyCoffee = new CowboyCoffee();
+            Assert.PropertyChanged(cowboyCoffee, "Price", () => {
+                cowboyCoffee.Size = Size.Large;
+            });
+        }
+        // test6: chaning the "Size" property should invoke propertychanged for "Calories"
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForCalories()
+        {
+            var cowboyCoffee = new CowboyCoffee();
+            Assert.PropertyChanged(cowboyCoffee, "Calories", () => {
+                cowboyCoffee.Size = Size.Large;
+            });
+        }
+
+
+        // test2: chaning the "Decaf" property should invoke propertychanged for "Decaf"
+        [Fact]
+        public void ChangingDecafPropertyShouldInvokePropertyChangedForDecaf()
+        {
+            var cowboyCoffee = new CowboyCoffee();
+            Assert.PropertyChanged(cowboyCoffee, "Decaf", () => {
+                cowboyCoffee.Decaf = true;
+            });
+        }
+
+        // test3: chaning the "RoomForCream" property should invoke propertychanged for "RoomForCream"
+        [Fact]
+        public void ChangingRoomForCreamPropertyShouldInvokePropertyChangedForRoomForCream()
+        {
+            var cowboyCoffee = new CowboyCoffee();
+            Assert.PropertyChanged(cowboyCoffee, "RoomForCream", () => {
+                cowboyCoffee.RoomForCream = true;
+            });
+        }
+
+        // test2: chaning the "RoomForCream" property should invoke propertychanged for "SpecialInstrcutions"
+        [Fact]
+        public void ChangingRoomForCreamPropertyShouldInvokePropertyChangedForSpecialInstrcutions()
+        {
+            var cowboyCoffee = new CowboyCoffee();
+            Assert.PropertyChanged(cowboyCoffee, "SpecialInstrcutions", () => {
+                cowboyCoffee.RoomForCream = true;
+            });
+        }
+
     }
 }

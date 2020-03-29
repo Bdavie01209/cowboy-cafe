@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -52,5 +53,57 @@ namespace CowboyCafe.DataTests
             fries.Size = size;
             Assert.Equal<uint>(calories, fries.Calories);
         }
+
+
+
+
+        // ChiliCheeseFries should implement the inotifypropertychangedinterface
+        [Fact]
+        public void ChiliCheeseFriesShouldImpliemntInotifyPropertyChanged()
+        {
+            var ChiliCheeseFries = new ChiliCheeseFries();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ChiliCheeseFries);
+        }
+
+
+
+        [Fact]
+        public void ChaningSizePropertyshouldNotifySize()
+        {
+            var ChiliCheeseFries = new ChiliCheeseFries();
+            Assert.PropertyChanged(ChiliCheeseFries, "Size", () => {
+                ChiliCheeseFries.Size = Size.Large;
+            });
+        }
+
+
+        [Fact]
+        public void ChaningSizePropertyshouldNotifyprice()
+        {
+            var ChiliCheeseFries = new ChiliCheeseFries();
+            Assert.PropertyChanged(ChiliCheeseFries, "Price", () => {
+                ChiliCheeseFries.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChaningSizePropertyshouldNotifyCalories()
+        {
+            var ChiliCheeseFries = new ChiliCheeseFries();
+            Assert.PropertyChanged(ChiliCheeseFries, "Calories", () => {
+                ChiliCheeseFries.Size = Size.Large;
+            });
+        }
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

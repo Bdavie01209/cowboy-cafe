@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -28,5 +29,18 @@ namespace CowboyCafe.DataTests
             var ribs = new RustlersRibs();
             Assert.Empty(ribs.SpecialInstructions);
         }
+
+
+
+        // test1: RustlersRibs should implement the inotifypropertychangedinterface
+        [Fact]
+        public void RustlersRibsShouldImplentInotifyPropertyChanged()
+        {
+            var ribs = new RustlersRibs();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ribs);
+        }
+
+
+
     }
 }

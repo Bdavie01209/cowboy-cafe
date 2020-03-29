@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
+using System.ComponentModel;
 using CowboyCafe.Data;
 
 namespace CowboyCafe.DataTests
@@ -105,5 +106,91 @@ namespace CowboyCafe.DataTests
             if (ice && lemon || !ice && !lemon) Assert.Single(water.SpecialInstructions);
             if (!ice && lemon) Assert.Equal(2, water.SpecialInstructions.Count);
         }
+
+
+        // test1: water should implement the inotifypropertychangedinterface
+        [Fact]
+        public void WaterShouldImplentInotifyPropertyChanged()
+        {
+            var Water = new Water();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(Water);
+        }
+
+
+        // test2: chaning the "Ice" property should invoke propertychanged for "Ice"
+        [Fact]
+        public void ChangingIcePropertyShouldInvokePropertyChangedForIce()
+        {
+            var Water = new Water();
+            Assert.PropertyChanged(Water, "Ice", () => {
+                Water.Ice = false;
+            });
+        }
+
+        // test3: chaning the "Ice" property should invoke propertychanged for "SpecialInstrcutions"
+        [Fact]
+        public void ChangingIcePropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var Water = new Water();
+            Assert.PropertyChanged(Water, "SpecialInstrcutions", () => {
+                Water.Ice = false;
+            });
+        }
+        // test4: chaning the "Size" property should invoke propertychanged for "Size"
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForSize()
+        {
+            var Water = new Water();
+            Assert.PropertyChanged(Water, "Size", () => {
+                Water.Size = Size.Large;
+            });
+        }
+
+        // test5: chaning the "Size" property should invoke propertychanged for "Price"
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForPrice()
+        {
+            var Water = new Water();
+            Assert.PropertyChanged(Water, "Price", () => {
+                Water.Size = Size.Large;
+            });
+        }
+        // test6: chaning the "Size" property should invoke propertychanged for "Calories"
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForCalories()
+        {
+            var Water = new Water();
+            Assert.PropertyChanged(Water, "Calories", () => {
+                Water.Size = Size.Large;
+            });
+        }
+
+
+
+        // test5: changing the "Lemon" property should invoke propertychanged for "Lemon"
+        [Fact]
+        public void ChangingLemonPropertyShouldInvokePropertyChangedForLemon()
+        {
+            var Water = new Water();
+            Assert.PropertyChanged(Water, "Lemon", () => {
+                Water.Lemon = false;
+            });
+        }
+
+
+
+
+        //test: Changing the "Lemon" Property should invoke the property Changed for "TortillaStrips"
+        [Fact]
+        public void ChangingLemonPropertyShouldInvokePropertyChangedForSpecialInstrcutions()
+        {
+            var Water = new Water();
+            Assert.PropertyChanged(Water, "SpecialInstrcutions", () => {
+                Water.Lemon = false;
+            });
+        }
+
+
     }
 }
+

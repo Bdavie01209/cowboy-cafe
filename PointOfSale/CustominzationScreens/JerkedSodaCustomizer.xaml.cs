@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.Data;
 
 namespace PointOfSale.CustominzationScreens
 {
@@ -29,5 +30,83 @@ namespace PointOfSale.CustominzationScreens
             RadioButton rb = sender as RadioButton;
         }
 
+        private void CreamSodaButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is JerkedSoda data)
+            {
+                data.Flavor = CowboyCafe.Data.SodaFlavor.CreamSoda;
+            }
+        }
+
+        private void OrangeSodaButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is JerkedSoda data)
+            {
+                data.Flavor = CowboyCafe.Data.SodaFlavor.OrangeSoda;
+            }
+        }
+
+        private void SarsparillaButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is JerkedSoda data)
+            {
+                data.Flavor = CowboyCafe.Data.SodaFlavor.Sarsparilla;
+            }
+        }
+
+        private void BirchBeerButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is JerkedSoda data)
+            {
+                data.Flavor = CowboyCafe.Data.SodaFlavor.BirchBeer;
+            }
+        }
+
+        private void RootBeerButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is JerkedSoda data)
+            {
+                data.Flavor = CowboyCafe.Data.SodaFlavor.RootBeer;
+            }
+        }
+
+        private void IceButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is JerkedSoda data)
+            {
+                if (data.Ice)
+                {
+                    data.Ice = false;
+                }
+                else
+                {
+                    data.Ice = true;
+                }
+            }
+        }
+
+        private void SmallButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is JerkedSoda data)
+            {
+                data.Size = CowboyCafe.Data.Size.Small;
+            }
+        }
+
+        private void MediumButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is JerkedSoda data)
+            {
+                data.Size = CowboyCafe.Data.Size.Medium;
+            }
+        }
+
+        private void LargeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is JerkedSoda data)
+            {
+                data.Size = CowboyCafe.Data.Size.Large;
+            }
+        }
     }
 }

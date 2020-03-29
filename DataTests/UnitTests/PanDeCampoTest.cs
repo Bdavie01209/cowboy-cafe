@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -52,5 +53,52 @@ namespace CowboyCafe.DataTests
             pdc.Size = size;
             Assert.Equal<uint>(calories, pdc.Calories);
         }
+
+        // PanDeCampo should implement the inotifypropertychangedinterface
+        [Fact]
+        public void PanDeCampoShouldImpliemntInotifyPropertyChanged()
+        {
+            var panDeCampo = new PanDeCampo();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(panDeCampo);
+        }
+
+
+
+        [Fact]
+        public void ChaningSizePropertyshouldNotifySize()
+        {
+            var panDeCampo = new PanDeCampo();
+            Assert.PropertyChanged(panDeCampo, "Size", () => {
+                panDeCampo.Size = Size.Large;
+            });
+        }
+
+
+        [Fact]
+        public void ChaningSizePropertyshouldNotifyprice()
+        {
+            var panDeCampo = new PanDeCampo();
+            Assert.PropertyChanged(panDeCampo, "Price", () => {
+                panDeCampo.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChaningSizePropertyshouldNotifyCalories()
+        {
+            var panDeCampo = new PanDeCampo();
+            Assert.PropertyChanged(panDeCampo, "Calories", () => {
+                panDeCampo.Size = Size.Large;
+            });
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }

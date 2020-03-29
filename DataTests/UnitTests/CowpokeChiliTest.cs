@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -92,6 +93,96 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold cheese", chili.SpecialInstructions);
             Assert.Contains("hold sour cream", chili.SpecialInstructions);
             Assert.Contains("hold green onions", chili.SpecialInstructions);
+        }
+
+        // test1: CowpokeChili should implement the inotifypropertychangedinterface
+        [Fact]
+        public void CowPokeChiliShouldImplentInotifyPropertyChanged()
+        {
+            var cowpokeChili = new CowpokeChili();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(cowpokeChili);
+        }
+
+
+        // test2: changing the "Cheese" property should invoke propertychanged for "cheese"
+        [Fact]
+        public void ChangingCheesePropertyShouldInvokePropertyChangedForCheese()
+        {
+            var cowpokeChili = new CowpokeChili();
+            Assert.PropertyChanged(cowpokeChili, "Cheese", () => {
+                cowpokeChili.Cheese = false;
+            });
+        }
+
+        // test3: changing the "Cheese" property should invoke propertychanged for "SpecialInstrcutions"
+        [Fact]
+        public void ChangingCheesePropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var cowpokeChili = new CowpokeChili();
+            Assert.PropertyChanged(cowpokeChili, "SpecialInstrcutions", () => {
+                cowpokeChili.Cheese = false;
+            });
+        }
+        // test4: changing the "SourCream" property should invoke propertychanged for "SourCream"
+        [Fact]
+        public void ChangingSourCreamPropertyShouldInvokePropertyChangedForSourCream()
+        {
+            var cowpokeChili = new CowpokeChili();
+            Assert.PropertyChanged(cowpokeChili, "SourCream", () => {
+                cowpokeChili.SourCream = false;
+            });
+        }
+
+        // test5: changing the "SourCream" property should invoke propertychanged for "speicalInstruction"
+        [Fact]
+        public void ChangingSourCreamPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var cowpokeChili = new CowpokeChili();
+            Assert.PropertyChanged(cowpokeChili, "SpecialInstrcutions", () => {
+                cowpokeChili.SourCream = false;
+            });
+        }
+
+
+
+
+        //test: Changing the "TortillaStrips" Property should invoke the property Changed for "TortillaStrips"
+        [Fact]
+        public void ChangingTortillaStripsPropertyShouldInvokePropertyChangedForTortillaStrips()
+        {
+            var cowpokeChili = new CowpokeChili();
+            Assert.PropertyChanged(cowpokeChili, "TortillaStrips", () => {
+                cowpokeChili.TortillaStrips = false;
+            });
+        }
+        //test: Changing the "TortillaStrips" Property should invoke the property Changed for "SpecialInstructions"
+        [Fact]
+        public void ChangingTortillaStripsPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var cowpokeChili = new CowpokeChili();
+            Assert.PropertyChanged(cowpokeChili, "SpecialInstructions", () => {
+                cowpokeChili.TortillaStrips = false;
+            });
+        }
+
+
+        //test: Changing the "GreenOnions" Property should invoke the property Changed for "GreenOnions"
+        [Fact]
+        public void ChangingGreenOnionsPropertyShouldInvokePropertyChangedForGreenOnions()
+        {
+            var cowpokeChili = new CowpokeChili();
+            Assert.PropertyChanged(cowpokeChili, "GreenOnions", () => {
+                cowpokeChili.GreenOnions = false;
+            });
+        }
+        //test: Changing the "GreenOnions" Property should invoke the property Changed for "SpecialInstructions"
+        [Fact]
+        public void ChangingGreenOnionsPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var cowpokeChili = new CowpokeChili();
+            Assert.PropertyChanged(cowpokeChili, "SpecialInstructions", () => {
+                cowpokeChili.GreenOnions = false;
+            });
         }
     }
 }

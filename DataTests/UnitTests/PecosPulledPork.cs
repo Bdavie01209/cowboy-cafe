@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -58,6 +59,57 @@ namespace CowboyCafe.DataTests
             pulledPork.Pickle = false;
             Assert.Contains("hold pickle", pulledPork.SpecialInstructions);
             Assert.Contains("hold bread", pulledPork.SpecialInstructions);
+        }
+
+
+        // test1: PecosPulledPork should implement the inotifypropertychangedinterface
+        [Fact]
+        public void PecosPulledPorkShouldImplentInotifyPropertyChanged()
+        {
+            var pork = new PecosPulledPork();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(pork);
+        }
+
+
+
+
+
+
+        //test: Changing the "Bread" Property should invoke the property Changed for "Bread"
+        [Fact]
+        public void ChangingBreadPropertyShouldInvokePropertyChangedForBread()
+        {
+            var pork = new PecosPulledPork();
+            Assert.PropertyChanged(pork, "Bread", () => {
+                pork.Bread = false;
+            });
+        }
+        //test: Changing the "Bread" Property should invoke the property Changed for "SpecialInstructions"
+        [Fact]
+        public void ChangingBreadPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var pork = new PecosPulledPork();
+            Assert.PropertyChanged(pork, "SpecialInstructions", () => {
+                pork.Bread = false;
+            });
+        }
+        //test: Changing the "Pickle" Property should invoke the property Changed for "Pickle"
+        [Fact]
+        public void ChangingPicklePropertyShouldInvokePropertyChangedForPickle()
+        {
+            var pork = new PecosPulledPork();
+            Assert.PropertyChanged(pork, "Pickle", () => {
+                pork.Pickle = false;
+            });
+        }
+        //test: Changing the "Pickle" Property should invoke the property Changed for "SpecialInstructions"
+        [Fact]
+        public void ChangingPicklePropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var pork = new PecosPulledPork();
+            Assert.PropertyChanged(pork, "SpecialInstructions", () => {
+                pork.Pickle = false;
+            });
         }
     }
 }
