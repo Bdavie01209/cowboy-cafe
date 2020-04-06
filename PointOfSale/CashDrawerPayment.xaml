@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="PointOfSale.CashDrawerPayment"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Name="TotalTextBox" FontSize="30" FontWeight="Bold" Text="Total: $0"/>
+            <TextBlock Name="sumTextBox" Grid.Row="1" FontSize="30" FontWeight="Bold" Text="$0"/>
+            <Button Grid.Row="2" Click="Button_Click">Finalize</Button>
+        </Grid>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Name="PennyButton" Click="PennyButton_Click">Add Penny</Button>
+            <Button Name="nickleButton" Grid.Column="1" Click="nickleButton_Click">Add Nickle</Button>
+            <Button Name="DimeButton" Grid.Column="2" Click="DimeButton_Click">Add Dime</Button>
+            <Button Name="QuarterButton" Grid.Column="3" Click="QuarterButton_Click">Add Quarter</Button>
+            <Button Name="HalfDollarButton" Grid.Column="0" Grid.Row="1" Click="HalfDollarButton_Click">Add HalfDollar</Button>
+            <Button Name="DollarCoinButton" Grid.Column="1" Grid.Row="1" Click="DollarCoinButton_Click">Add Dollar Coin</Button>
+
+            <ListBox Grid.Row="1" Grid.Column="3" Name="MoneyListBox"></ListBox>
+
+
+            <Button Name="DollarButton" Grid.Column="0" Grid.Row="2" Click="DollarButton_Click">Add One Dollar Bill</Button>
+            <Button Name="TwoDollarButton" Grid.Column="1" Grid.Row="2" Click="TwoDollarButton_Click">Add Two Dollar Bill</Button>
+            <Button Name="FiveDollarButton" Grid.Column="2" Grid.Row="2" Click="FiveDollarButton_Click">Add Five Dollar Bill</Button>
+            <Button Name="TenDollarButon" Grid.Column="3" Grid.Row="2" Click="TenDollarButon_Click">Add Ten Dollar Bill</Button>
+            <Button Name="TwentyDollarButton" Grid.Column="0" Grid.Row="3" Click="TwentyDollarButton_Click">Add TwentyFive Dollar Bill</Button>
+            <Button Name="FiftyDollarButton" Grid.Column="1" Grid.Row="3" Click="FiftyDollarButton_Click">Add Fifty Dollar Bill</Button>
+            <Button Name="HundredDollarButton" Grid.Column="2" Grid.Row="3" Click="HundredDollarButton_Click">Add Hundred Dollar Bill</Button>
+            <Button Name="CashDrawerContents" Grid.Column="3" Grid.Row="3" Click="CashDrawerContents_Click">Cash Drawer</Button>
+        </Grid>
+    </Grid>
+</UserControl>

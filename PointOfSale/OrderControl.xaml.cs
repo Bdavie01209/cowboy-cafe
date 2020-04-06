@@ -20,7 +20,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
-using PointOfSale.ExtensionMethods; 
+using PointOfSale.ExtensionMethods;
+using CashRegister;
 
 namespace PointOfSale
 {
@@ -35,6 +36,8 @@ namespace PointOfSale
             var data = new Order();
             
             this.DataContext = data;
+
+            var cashdrawer = new CashDrawer();
         }
 
         /// <summary>
@@ -44,8 +47,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CancleOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
-            ScreenHousing.Child = new MenuItemSelectioncontrols();
+            Reset();
         }
 
         /// <summary>
@@ -53,10 +55,10 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void NewOrderButton_Click(object sender, RoutedEventArgs e)
+        private void CompleteOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
-            ScreenHousing.Child = new MenuItemSelectioncontrols();
+            var mainwindow = this.FindAncestor<MainWindow>();
+            mainwindow.SwapScreen(new TransactionControl((Order)DataContext));
         }
 
 
@@ -69,6 +71,12 @@ namespace PointOfSale
 
         private void ItemSelectionButton_Click(object sender, RoutedEventArgs e)
         {
+            ScreenHousing.Child = new MenuItemSelectioncontrols();
+        }
+
+        public void Reset()
+        {
+            this.DataContext = new Order();
             ScreenHousing.Child = new MenuItemSelectioncontrols();
         }
     }

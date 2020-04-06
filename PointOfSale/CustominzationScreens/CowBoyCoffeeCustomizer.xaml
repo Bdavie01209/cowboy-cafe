@@ -25,9 +25,9 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Button Name="SmallButton">Small</Button>
-            <Button Name="MediumButton" Grid.Row="1">Medium</Button>
-            <Button Name="LargeButton" Grid.Row="2">Large</Button>
+            <Button Name="SmallButton" Click="SmallButton_Click">Small</Button>
+            <Button Name="MediumButton" Grid.Row="1" Click="MediumButton_Click">Medium</Button>
+            <Button Name="LargeButton" Grid.Row="2" Click="LargeButton_Click">Large</Button>
         </Grid>
 
         <Button Name="IceButton" Grid.Column="1" Click="IceButton_Click">Ice</Button>
