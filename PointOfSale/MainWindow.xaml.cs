@@ -31,8 +31,17 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// printer to print from
+        /// </summary>
         private ReceiptPrinter printer = new ReceiptPrinter();
+        /// <summary>
+        /// cash drawer that keeps all data
+        /// </summary>
         public CashDrawer cashdrawer;
+        /// <summary>
+        /// ordercontrol from most recent instance
+        /// </summary>
         private OrderControl orderControl;
 
         public MainWindow()
@@ -43,16 +52,26 @@ namespace PointOfSale
             screenHousingmain.Child = orderControl;
         }
 
+        /// <summary>
+        /// swaps the screen of the main window
+        /// </summary>
+        /// <param name="element"></param>
         public void SwapScreen(FrameworkElement element)
         {
             screenHousingmain.Child = element;
         }
+        /// <summary>
+        /// returns to the previous order control
+        /// </summary>
         public void SwapScreenBack()
         {
             screenHousingmain.Child = orderControl;
             orderControl.Reset();
         }
 
+        /// <summary>
+        /// pritns a given recipte 
+        /// </summary>
         public void PrintReceiptCredit()
         {
             var o = (Order)orderControl.DataContext;
@@ -73,6 +92,11 @@ namespace PointOfSale
 
             printer.Print(sb.ToString());
         }
+        /// <summary>
+        /// prints a given recipt
+        /// </summary>
+        /// <param name="paid">amount user paid</param>
+        /// <param name="change">amount user recived back</param>
         public void PrintReceiptcash(double paid, double change)
         {
             var o = (Order)orderControl.DataContext;

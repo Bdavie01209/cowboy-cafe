@@ -21,11 +21,20 @@ namespace PointOfSale
     /// </summary>
     public partial class CashDrawerPayment : UserControl
     {
-
+        /// <summary>
+        /// total to reach
+        /// </summary>
         private double total;
 
+        /// <summary>
+        /// how much user has put in
+        /// </summary>
         private double currSum;
 
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="t">total cost</param>
         public CashDrawerPayment(double t)
         {
             InitializeComponent();
@@ -34,6 +43,11 @@ namespace PointOfSale
             TotalTextBox.Text = String.Format("Total: {0:C2}", total);
         }
 
+        /// <summary>
+        /// button for when penny is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PennyButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is CashDrawer cd)
@@ -43,7 +57,11 @@ namespace PointOfSale
                 update();
             }
         }
-
+        /// <summary>
+        /// button for when nickle is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void nickleButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is CashDrawer cd)
@@ -54,6 +72,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// button for when dime is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DimeButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is CashDrawer cd)
@@ -64,6 +87,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// button for when quarter is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void QuarterButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is CashDrawer cd)
@@ -74,6 +102,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// button for when dollar coin is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DollarCoinButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is CashDrawer cd)
@@ -84,6 +117,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// button for when half dollar button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HalfDollarButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is CashDrawer cd)
@@ -94,6 +132,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// button for when dollar bill is prseed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DollarButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is CashDrawer cd)
@@ -104,6 +147,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// button for when two dollar button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TwoDollarButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is CashDrawer cd)
@@ -114,6 +162,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// button for when fivedollar button is prssed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FiveDollarButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is CashDrawer cd)
@@ -124,6 +177,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// button for when ten dollar button is preeseds
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TenDollarButon_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is CashDrawer cd)
@@ -134,6 +192,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// handler for when twentydollarbutton is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TwentyDollarButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is CashDrawer cd)
@@ -144,6 +207,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// handler for when fiftydollarbutton is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FiftyDollarButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is CashDrawer cd)
@@ -154,6 +222,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// handler for when hundreddollarbutton is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HundredDollarButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is CashDrawer cd)
@@ -164,11 +237,19 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// updates the payed so far button
+        /// </summary>
         private void update()
         {
             sumTextBox.Text = string.Format("Payed So far \n {0:C2}", currSum);
         }
 
+        /// <summary>
+        /// handler for when the finalize button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if(DataContext is CashDrawer cd)
@@ -196,7 +277,7 @@ namespace PointOfSale
                     cashback.Add(FindChangeCoin(Coins.Dime, cd.Dimes, .1));
                     cashback.Add(FindChangeCoin(Coins.Nickel, cd.Nickels, .05));
                     cashback.Add(FindChangeCoin(Coins.Penny, cd.Pennies, .01));
-                    if (Math.Round(currSum,2) - total != 0)
+                    if (Math.Round(currSum,2) - total !< 0)
                     {
                         MessageBox.Show("Error Creating Cash Back");
                         currSum = total + change;
@@ -205,19 +286,19 @@ namespace PointOfSale
                     else
                     {
                         StringBuilder changeTogive = new StringBuilder();
-                        changeTogive.AppendLine(cashback[0] + " Hundreds");
-                        changeTogive.AppendLine(cashback[1] + " Fifties");
-                        changeTogive.AppendLine(cashback[2] + " Twenties");
-                        changeTogive.AppendLine(cashback[3] + " Tens");
-                        changeTogive.AppendLine(cashback[4] + " Fives");
-                        changeTogive.AppendLine(cashback[5] + " Twos");
-                        changeTogive.AppendLine(cashback[6] + " Dollar Bills");
-                        changeTogive.AppendLine(cashback[7] + " Dollar Coins");
-                        changeTogive.AppendLine(cashback[8] + " Half dollars");
-                        changeTogive.AppendLine(cashback[9] + " Quarters");
-                        changeTogive.AppendLine(cashback[10] + " Dimes");
-                        changeTogive.AppendLine(cashback[11] + " Nickles");
-                        changeTogive.AppendLine(cashback[12] + " Pennies");
+                        if(cashback[0] != 0) changeTogive.AppendLine(cashback[0] + " Hundreds");
+                        if (cashback[1] != 0) changeTogive.AppendLine(cashback[1] + " Fifties");
+                        if (cashback[2] != 0) changeTogive.AppendLine(cashback[2] + " Twenties");
+                        if (cashback[3] != 0) changeTogive.AppendLine(cashback[3] + " Tens");
+                        if (cashback[4] != 0) changeTogive.AppendLine(cashback[4] + " Fives");
+                        if (cashback[5] != 0) changeTogive.AppendLine(cashback[5] + " Twos");
+                        if (cashback[6] != 0) changeTogive.AppendLine(cashback[6] + " Dollar Bills");
+                        if (cashback[7] != 0) changeTogive.AppendLine(cashback[7] + " Dollar Coins");
+                        if (cashback[8] != 0) changeTogive.AppendLine(cashback[8] + " Half dollars");
+                        if (cashback[9] != 0) changeTogive.AppendLine(cashback[9] + " Quarters");
+                        if (cashback[10] != 0) changeTogive.AppendLine(cashback[10] + " Dimes");
+                        if (cashback[11] != 0) changeTogive.AppendLine(cashback[11] + " Nickles");
+                        if (cashback[12] != 0) changeTogive.AppendLine(cashback[12] + " Pennies");
 
                         MessageBox.Show(changeTogive.ToString());
                         MainWindow mainwindow = this.FindAncestor<MainWindow>();
@@ -229,6 +310,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// buton to show cash drawer contents
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CashDrawerContents_Click(object sender, RoutedEventArgs e)
         {
             if(DataContext is CashDrawer cd)
@@ -252,7 +338,13 @@ namespace PointOfSale
             }
         }
 
-
+        /// <summary>
+        /// finds the given change amount back for a certain dollar amount
+        /// </summary>
+        /// <param name="b">the dollar that is being removed</param>
+        /// <param name="totalNum">the amount that the cash drawer has</param>
+        /// <param name="valueofDenom">value of the the denom</param>
+        /// <returns>amount of that dollar removed</returns>
         private int FindChangeDollar(Bills b, int totalNum, double valueofDenom)
         {
             int returnValue = -1;
@@ -269,6 +361,13 @@ namespace PointOfSale
             }
             return returnValue;
         }
+        /// <summary>
+        /// finds the given change amount back for a certain dollar amount
+        /// </summary>
+        /// <param name="b">the coin that is being removed</param>
+        /// <param name="totalNum">the amount that the cash drawer has</param>
+        /// <param name="valueofDenom">value of the the denom</param>
+        /// <returns>amount of that coin removed</returns>
         private int FindChangeCoin(Coins c, int totalNum, double valueofDenom)
         {
             int returnValue = -1;
@@ -286,6 +385,10 @@ namespace PointOfSale
             return returnValue;
         }
 
+        /// <summary>
+        /// undos any change being removed
+        /// </summary>
+        /// <param name="c"></param>
         private void undo(List<int> c)
         {
             if(DataContext is CashDrawer cd)
