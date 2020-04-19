@@ -1,0 +1,72 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cowboy Cafe</h1>
+    <p>We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.</p>
+</div>
+<div>
+    <h2>Entres</h2>
+    @foreach (CowboyCafe.Data.Entree e in CowboyCafe.Data.Menu.Entrees())
+    {
+        <div class="menu-item">
+            <b>@e.ToString()</b>
+            <div class="itemGuide">
+                $@e.Price | @e.Calories Calories
+            </div>
+        </div>
+    }
+    <h2>Sides</h2>
+
+    @foreach (CowboyCafe.Data.Side e in CowboyCafe.Data.Menu.Sides())
+    {
+        <div class="menu-item">
+            <b>@e.ToString()</b>
+            <div class="itemGuide">
+                $@e.Price | @e.Calories Calories
+            </div>
+        </div>
+        e.Size = CowboyCafe.Data.Size.Medium; 
+        <div class="menu-item">
+            <b>@e.ToString()</b>
+            <div class="itemGuide">
+                $@e.Price | @e.Calories Calories
+            </div>
+        </div>
+        e.Size = CowboyCafe.Data.Size.Large;
+        <div class="menu-item">
+            <b>@e.ToString()</b>
+            <div class="itemGuide">
+                $@e.Price | @e.Calories Calories
+            </div>
+        </div>
+    }
+    <h2>Drinks</h2>
+
+    @foreach (CowboyCafe.Data.Drink e in CowboyCafe.Data.Menu.Drinks())
+    {
+        <div class="menu-item">
+            <b>@e.ToString()</b>
+            <div class="itemGuide">
+                $@e.Price | @e.Calories Calories
+            </div>
+        </div>
+        e.Size = CowboyCafe.Data.Size.Medium; 
+        <div class="menu-item">
+            <b>@e.ToString()</b>
+            <div class="itemGuide">
+                $@e.Price | @e.Calories Calories
+            </div>
+        </div>
+        e.Size = CowboyCafe.Data.Size.Large;
+        <div class="menu-item">
+            <b>@e.ToString()</b>
+            <div class="itemGuide">
+                $@e.Price | @e.Calories Calories
+            </div>
+        </div>
+    }
+</div>
