@@ -8,6 +8,25 @@
     <h1 class="display-4">Cowboy Cafe</h1>
     <p>We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.</p>
 </div>
+<form>
+    <input type="checkbox" name="typefood" id="Entree" value="Entree" checked="@Model.EntreeSelected" />
+    <label for="Entree">Entree</label>
+    <input type="checkbox" name="typefood" id="Side" value="Side"  checked="@Model.SideSelected"/>
+    <label for="Entree">Side</label>
+    <input type="checkbox" name="typefood" id="Drink" value="Drink" checked="@Model.DrinkSelected" />
+    <label for="Entree">Drink</label>
+    <label>|</label>
+    <label for="CaloriesMin">Calories</label>
+    <input type="number" name="CaloriesMin" min="0" max="2000" step="1" placeholder="min"/>
+    <input type="number" name="CaloriesMax "min="0" max="2000" step="1" placeholder="max" />
+    <label>|</label>
+    <label for="PriceMin">Price</label>
+    <input type="number" name="PriceMin" min="0" max="2000" step=".01" placeholder="min"/>
+    <input type="number" name="PriceMax "min="0" max="2000" step=".01" placeholder="max"/>
+    <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+    <input type="submit" value="Search">
+
+</form>
 <div>
     <h2>Entres</h2>
     @foreach (CowboyCafe.Data.Entree e in CowboyCafe.Data.Menu.Entrees())
@@ -29,7 +48,7 @@
                 $@e.Price | @e.Calories Calories
             </div>
         </div>
-        e.Size = CowboyCafe.Data.Size.Medium; 
+        e.Size = CowboyCafe.Data.Size.Medium;
         <div class="menu-item">
             <b>@e.ToString()</b>
             <div class="itemGuide">
@@ -54,7 +73,7 @@
                 $@e.Price | @e.Calories Calories
             </div>
         </div>
-        e.Size = CowboyCafe.Data.Size.Medium; 
+        e.Size = CowboyCafe.Data.Size.Medium;
         <div class="menu-item">
             <b>@e.ToString()</b>
             <div class="itemGuide">
